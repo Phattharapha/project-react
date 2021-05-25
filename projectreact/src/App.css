@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10wh;
+  background: rgb(146, 146, 185);
+  color: white;
+}
+
+.nav-links{
+  width: 40%;
+}
