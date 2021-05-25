@@ -24,8 +24,7 @@ const Login = ({ setSession }) => {
         errorMessage: error.message
       })
     }
-    
-    
+        
   }
 
   const handleUsername = event => {
@@ -38,11 +37,21 @@ const Login = ({ setSession }) => {
 
   return (
     <div>
-      
-      <input type="email" placeholder="Email" onChange={handleUsername} />
-      <input type="password" placeholder="Password" onChange={handlePassword}/>
-
-      <button type="button" onClick={handleLogin}>Login</button>
+      <form>
+      <fieldset>
+      <legend>LOGIN</legend>
+        <div class="mb-3">
+          <label class="form-label">Email </label> <br></br>
+          <input type="email"  placeholder="Email" onChange={handleUsername} />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password </label> <br></br>
+          <input type="password" placeholder="Password" onChange={handlePassword}/>
+        </div>
+        
+      <button type="button" class="btn btn-primary" onClick={handleLogin}>Login</button>
+      </fieldset>
+      </form>      
     </div>
   )
 }
