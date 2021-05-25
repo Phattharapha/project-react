@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import Moment from 'react-moment';
 import './App.css';
 import Login from './components/Login'
 import auth from './firebase'
@@ -59,7 +60,7 @@ function App() {
       })
     })
   }
-
+  console.log("info",info)
   return (
     <div className="App">
       {
@@ -74,13 +75,15 @@ function App() {
         <br></br>
         <h2>Information</h2><br></br>
 
-        {info.map((info) => (
+  {info.map((info) => (
           <div class="container px-4 border" key={info.id}>
             <h3> Name: {info.name}</h3>
             <p> Address: {info.address}</p>
+            <p> Date: <Moment format="YYYY/MM/DD">{info.date.seconds}</Moment></p>
           </div>
         ))}
-        
+
+       
       </form>) : (<header className="App-header">
         <Login setSession={setSession}/>
       </header>)
